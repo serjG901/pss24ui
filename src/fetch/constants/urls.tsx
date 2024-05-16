@@ -1,4 +1,4 @@
-const main = "http://localhost:3000";//https://ntzfw2-3000.csb.app   http://localhost:5173
+const main = "https://ntzfw2-3000.csb.app/";//https://ntzfw2-3000.csb.app   http://localhost:5173
 const movies = "discover/movie";
 const genres = "genre/movie/list";
 const movieById = "movie";
