@@ -1,0 +1,6 @@
+.error-404-svg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: min(5vw, 5vh);
+}

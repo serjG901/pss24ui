@@ -1,0 +1,19 @@
+.star-rating {
+    width: min-content;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.star-rating-user-rating {
+    font: var(--font--title-xs-semibold);
+    color: var(--color-black);
+}
+
+@media screen and (max-width: 380px) {
+    .star-rating {
+        right: 20px;
+        position: absolute;
+    }
+}

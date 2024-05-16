@@ -1,0 +1,105 @@
+.card-movie-byid-description {
+    display: flex;
+    gap: var(--gap-m);
+    color: var(--color-black);
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    text-align: left;
+}
+
+.card-movie-byid-description-poster img {
+    display: block;
+    width: 250px;
+    height: 352px;
+}
+
+.card-movie-byid-loading-poster {
+    animation: card-movie-loading-poster 3s linear infinite;
+    background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
+    min-height: 352px;
+}
+
+@keyframes card-movie-loading-poster {
+    from {
+        background-position-y: -352px;
+    }
+    to {
+        background-position-y: 352px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .card-movie-byid-description {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-movie-byid-description-poster img {
+        width: 170px;
+        height: 239px;
+    }
+
+    .card-movie-byid-loading-poster {
+        animation: card-movie-loading-poster 3s linear infinite;
+        background: linear-gradient(
+            0deg,
+            #ffffff 0%,
+            #eeeeee 50%,
+            #ffffff 100%
+        );
+        min-height: 239px;
+    }
+
+    @keyframes card-movie-loading-poster {
+        from {
+            background-position-y: -239px;
+        }
+        to {
+            background-position-y: 239px;
+        }
+    }
+}
+
+.card-movie-byid-description-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xxs);
+}
+
+.card-movie-byid-description-originalTitle {
+    font: var(--font--title-s-semibold);
+    color: var(--color-purple-500-main);
+}
+
+.card-movie-byid-description-release {
+    font: var(--font--text-base-m-regular);
+    color: var(--color-gray-500);
+}
+
+.card-movie-byid-description-rating {
+    font: var(--font--text-base-m-bold);
+    display: flex;
+    align-items: center;
+    gap: var(--gap-xxxs);
+}
+
+.card-movie-byid-description-rating-count {
+    font: var(--font--text-base-m-regular);
+    color: var(--color-gray-500);
+    margin-left: var(--gap-xxxs);
+}
+
+.card-movie-byid-description-genres-etc {
+    font: var(--font--text-base-m-regular);
+    color: var(--color-gray-500);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-content: flex-end;
+}
+
+.card-movie-byid-description-genres-etc div:nth-child(even) {
+    color: var(--color-black);
+    padding-left: 10px;
+}

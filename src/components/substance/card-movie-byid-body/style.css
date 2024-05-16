@@ -1,0 +1,86 @@
+.card-movie-byid-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    align-items: flex-start;
+}
+
+.card-movie-byid-body > div > div:nth-child(odd) {
+    font: var(--font--title-s-bold);
+}
+
+.card-movie-byid-body-trailer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+.card-movie-byid-body-trailer-iframe {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: var(--color-gray-100);
+    border-radius: 9px;
+}
+.card-movie-byid-body-trailer-iframe iframe {
+    border-radius: 9px;
+    border: none;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.card-movie-byid-body-overview {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    padding-block: 20px;
+    border-block: 1px solid var(--color-gray-500);
+}
+
+.card-movie-byid-body-production {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.card-movie-byid-body-production-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-movie-byid-body-production-body-company {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font: var(--font--text-base-m-bold);
+}
+
+.card-movie-byid-body-production-body-company-logo {
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 6px;
+    border: 1px solid var(--color-gray-100);
+    border-radius: 50%;
+}
+
+.card-movie-byid-body-production-body-company-logo img {
+    display: block;
+    object-fit: contain;
+    width: 27px;
+}
+
+.card-movie-byid-body-production-body-company-name {
+    text-align: left;
+}

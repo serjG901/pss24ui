@@ -1,0 +1,58 @@
+.error-page {
+    padding: var(--padding-xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    margin-inline: auto;
+    max-width: var(--page-max-width);
+}
+
+.logo404 {
+
+}
+
+@media screen and (max-width: 1000px) {
+    .logo404 {
+        align-self: center;
+    }
+  }
+
+.body404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.empty-404-link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-m);
+    justify-content: center;
+    align-items: center;
+}
+
+.button404 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--color-purple-500-main);
+    border-radius: var(--border-radius-m);
+    font: var(--font--text-link-button);
+    color: var(--color-white);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button404 a {
+    text-decoration: none;
+}
+
+.button404 button:hover {
+    background: var(--color-purple-600);
+}

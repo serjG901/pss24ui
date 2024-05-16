@@ -1,0 +1,26 @@
+.card-movie-empty {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--card-movie--padding);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-l);
+    gap: var(--gap-xxs);
+    height: 100%;
+}
+/*
+@media screen and (max-width: 1000px) {
+    .card-movie-empty {
+        justify-content: center;
+    }
+  }
+*/
+
+a:has(.card-movie-empty) {
+    text-decoration: none;
+    outline: none;
+}
+
+a:has(.card-movie-empty):focus .card-movie-empty {
+    box-shadow: inset 1px 1px var(--color-purple-500-main),
+        inset -1px -1px var(--color-purple-500-main);
+}

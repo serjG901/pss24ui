@@ -1,0 +1,39 @@
+.my-link {
+    width: 100%;
+    font: var(--font--text-base-m-regular);
+    text-align: left;
+    color: var(--color-black);
+    align-content: center;
+}
+
+.my-link a {
+    height: var(--height-xxl);
+    display: block;
+    text-decoration: inherit;
+    color: inherit;
+    padding: var(--padding-sm);
+    border-radius: var(--border-radius-m);
+}
+
+.my-link:has(a:focus) a {
+    outline: 1px solid var(--color-purple-500-main);
+}
+
+.my-link a:hover {
+    color: var(--color-black);
+    cursor: pointer;
+    background-color: var(--color-purple-200);
+}
+
+.my-link:has(a:active) a {
+    font-weight: var(--text-base-m-bold--font-weight);
+    color: var(--color-purple-500-main);
+    background-color: var(--color-purple-200);
+}
+
+.my-link:has(a.my-link_active) a {
+    font-weight: var(--text-base-m-bold--font-weight);
+    color: var(--color-purple-500-main);
+    background-color: var(--color-purple-200);
+    filter: none;
+}

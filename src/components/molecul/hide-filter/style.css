@@ -1,0 +1,35 @@
+.hide-filter {
+  display: none;
+}
+.hide-filter svg {
+  fill: var(--color-purple-500-main);
+}
+
+.hide-filter:hover svg {
+  fill: var(--color-purple-400);
+}
+
+.hide-filter .my-button:focus svg {
+  fill: var(--color-purple-400);
+}
+
+.hide-filter .my-button:focus {
+  filter: none;
+}
+
+.hide-filter:active svg {
+  fill: var(--color-purple-600);
+}
+
+@media screen and (max-width: 640px) {
+  .hide-filter {
+    margin-top: 12px;
+    display: flex;
+    align-self: center;
+    transform: rotateX(180deg);
+  }
+
+  .hide-filter-show-filter {
+    transform: rotateX(0deg);
+  }
+}

@@ -1,0 +1,21 @@
+.rating-icon-noAction {
+    width: 28px;
+    height: 28px;
+    stroke: var(--color-yellow);
+    fill: var(--color-yellow);
+}
+
+.rating-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.rating-icon {
+    stroke: var(--color-gray-300);
+    fill: var(--color-gray-300);
+}
+
+.rating-icon-filled {
+    stroke: var(--color-yellow);
+    fill: var(--color-yellow);
+}

@@ -1,0 +1,68 @@
+.filter-movies {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: min-content;
+    grid-area: filter;
+}
+
+.filter-movies-header {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 640px) {
+    .filter-movies-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 380px) {
+    .filter-movies {
+        padding: 8px;
+    }
+}
+
+.filter-movies-header-formname {
+    font: var(--font--title-xl-bold);
+}
+
+.filter-movies-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-m);
+    margin-top: 50px;
+    margin-bottom: 26px;
+}
+
+.filter-movies-genres,
+.filter-movies-release,
+.filter-movies-sortby,
+.filter-movies-ratings {
+    width: 284px;
+}
+
+.filter-movies-sortby {
+    align-self: flex-end;
+}
+
+@media screen and (max-width: 640px) {
+    .filter-movies-sortby {
+        margin-top: -8px;
+    }
+    .filter-movies:has(.filter-movies-form_hide) .filter-movies-sortby {
+        margin-top: -24px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .filter-movies {
+        width: 100%;
+    }
+    .filter-movies-form_hide {
+        height: 0px;
+        overflow: hidden;
+    }
+}

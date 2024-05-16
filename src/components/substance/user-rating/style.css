@@ -1,0 +1,111 @@
+.popover-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0 0 0/0.5);
+}
+
+.popover-wrapper::backdrop {
+    background-color: rgba(0 0 0/0.5);
+}
+.user-rating:focus {
+    outline: 1px solid var(--color-purple-500-main);
+}
+.user-rating {
+    position: fixed;
+    height: max-content;
+    inset: 0px;
+    margin: auto;
+    background-color: var(--color-white);
+    margin: auto;
+    width: 100%;
+    max-width: 380px;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: left;
+    font: var(--font--text-base-m-regular);
+}
+
+.user-rating-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.user-rating-header {
+    padding-top: 2px;
+    padding-bottom: 16px;
+    align-content: center;
+    border-bottom: 1px solid var(--color-gray-500);
+    position: relative;
+}
+
+.user-rating-header-close {
+    position: absolute;
+    right: -5px;
+    top: 2px;
+    stroke: var(--color-gray-500);
+}
+
+.user-rating-header-close:hover {
+    stroke: var(--color-purple-400);
+}
+
+.user-rating-header-close button:focus {
+    outline: 1px solid var(--color-purple-500-main);
+}
+
+.user-rating-header-close button:active {
+    stroke: var(--color-purple-600);
+}
+
+.user-rating-name {
+    font: var(--font--text-base-m-bold);
+}
+
+.user-rating-stars {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-rating-buttons {
+    display: flex;
+}
+
+.user-rating-buttons button {
+    padding: 4px 20px;
+    height: 40px;
+    background-color: var(--color-purple-500-main);
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--color-white);
+    cursor: pointer;
+}
+.user-rating-buttons button:last-child {
+    background-color: var(--color-white);
+    color: var(--color-purple-500-main);
+}
+
+.user-rating-buttons button:hover {
+    background-color: var(--color-purple-400);
+}
+
+.user-rating-buttons button:last-child:hover {
+    color: var(--color-purple-400);
+    background-color: var(--color-white);
+}
+
+.user-rating-buttons button:focus {
+    outline: 1px solid var(--color-purple-500-main);
+}
+
+.user-rating-buttons button:active {
+    background-color: var(--color-purple-600);
+}
+
+.user-rating-buttons button:last-child:active {
+    color: var(--color-purple-600);
+    background-color: var(--color-white);
+}

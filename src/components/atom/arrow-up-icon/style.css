@@ -1,0 +1,29 @@
+.arrow-up-icon {
+    width: 28px;
+    height: 12px;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.arrow-up-icon svg {
+  stroke: var(--color-gray-500);
+}
+
+.arrow-up-icon:hover svg {
+  stroke: var(--color-purple-400);
+}
+
+.my-button:has(.arrow-up-icon):focus svg {
+  stroke: var(--color-purple-400);
+}
+
+.my-button:has(.arrow-up-icon) {
+  filter: none;
+}
+
+.arrow-up-icon:active svg {
+  stroke: var(--color-purple-500-main);
+}

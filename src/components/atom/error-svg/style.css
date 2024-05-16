@@ -1,0 +1,19 @@
+.error-svg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: min(5vw, 5vh);
+}
+
+.error-svg-body {
+    fill: var(--color-purple-300);
+}
+.error-svg-eyes {
+    fill: var(--color-purple-500-main);
+}
+.error-svg-cheeks {
+    fill: var(--color-gray-100);
+}
+.error-svg-mouth {
+    fill: var(--color-purple-500-main);
+}

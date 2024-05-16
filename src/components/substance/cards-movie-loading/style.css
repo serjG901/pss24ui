@@ -1,0 +1,19 @@
+.cards-movie-loading {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-m);
+}
+
+.movie-byid-page .cards-movie-loading {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px; 
+}
+
+@media screen and (max-width: 640px) {
+    .cards-movie-loading {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,59 @@
+.rated-movies {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: var(--gap-hxl);
+}
+.rated-movies-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-m);
+}
+
+@media screen and (max-width: 750px) {
+    .rated-movies-cards {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.rated-movies-cards:has(.empty-found) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.rated-movies-cards:has(.empty-search) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.rated-movies-header {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+@media screen and (max-width: 360px) {
+    .rated-movies-header {
+        padding-inline: 8px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .rated-movies-header {
+        flex-direction: column;
+    }
+}
+
+.rated-movies-header-title {
+    font: var(--font--title-xl-bold);
+    width: 100%;
+    text-align: left;
+}

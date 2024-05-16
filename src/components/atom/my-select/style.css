@@ -1,0 +1,93 @@
+.my-select {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    position: relative;
+}
+
+.my-select-label {
+    font: var(--font--text-base-m-bold);
+}
+
+.my-select-select {
+    font: var(--font--subtitle-s);
+    align-items: center;
+    height: 42px;
+    padding-inline: var(--padding-inline-m);
+    padding-block: var(--padding-block-s);
+    padding-right: 20px;
+    border: var(--my-select-default--border);
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--color-white);
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.my-select-select-option {
+    height: 36px;
+    font: var(--font--text-base-m-regular);
+}
+
+.my-select-select-empty {
+    color: #acadb9;
+}
+
+.my-select-select-empty:focus {
+    color: var(--color-black);
+}
+
+.my-select-select-filled {
+    color: var(--color-black);
+    border: var(--my-select-filled--border);
+}
+
+.my-select-select:hover {
+    border: var(--my-select-hover--border);
+}
+
+.my-select-select:focus {
+    border: var(--my-select-focus--border);
+}
+
+.my-select-select:focus option:first-child {
+    display: none;
+}
+
+.my-select-arrow {
+    position: absolute;
+    right: 1px;
+    top: 36px;
+    background-color: transparent;
+    padding-right: 10px;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+
+.my-select-arrow-up {
+    transform: rotateX(180deg);
+}
+
+.my-select-select-error {
+    cursor: auto;
+    color: #9e3029;
+    border: var(--my-select-default--border) !important;
+}
+
+.my-select-select-loading {
+    cursor: wait;
+    animation: loading-select 3s linear infinite;
+    background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
+}
+
+@keyframes loading-select {
+    from {
+        background-position-y: -19px;
+    }
+    to {
+        background-position-y: 19px;
+    }
+}

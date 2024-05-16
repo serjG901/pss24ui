@@ -1,0 +1,9 @@
+.project-logo {
+  display: flex;
+  place-items: center;
+}
+
+.project-logo img {
+  max-width: 32px;
+  max-height: 32px;
+}

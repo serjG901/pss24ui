@@ -1,0 +1,33 @@
+.star-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.star-icon {
+  stroke: var(--color-gray-300);
+}
+
+.star-icon:hover {
+  stroke: var(--color-purple-500-main);
+}
+
+.my-button:has(.star-icon):focus .star-icon{
+  stroke: var(--color-purple-500-main);
+}
+
+.my-button:has(.star-icon):focus {
+  filter: none;
+}
+
+.star-icon-filled{
+  stroke: var(--color-purple-500-main);
+  fill: var(--color-purple-500-main);
+}
+
+.star-icon-filled:hover {
+  stroke: var(--color-purple-300);
+}
+
+.my-button:has(.star-icon-filled):focus .star-icon-filled{
+  stroke: var(--color-purple-300);
+}

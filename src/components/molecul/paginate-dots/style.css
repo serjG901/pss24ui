@@ -1,0 +1,10 @@
+.paginate-dots {
+  box-sizing: border-box;
+  padding: 0px 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  place-content: center;
+  -webkit-user-select: none;
+  user-select: none;
+}

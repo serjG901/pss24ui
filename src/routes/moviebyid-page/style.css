@@ -1,0 +1,29 @@
+.movie-byid-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: -6px;
+    margin-bottom: 44px;
+}
+
+.movie-byid-page-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.movie-byid-page-card-path {
+    color: var(--color-black);
+    display: flex;
+    align-self: flex-start;
+    gap: 11px;
+    font: var(--font--subtitle-s);
+}
+
+.movie-byid-page-card-path div {
+    color: var(--color-purple-500-main);
+}

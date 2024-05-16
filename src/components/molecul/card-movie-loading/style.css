@@ -1,0 +1,29 @@
+.card-movie-loading div {
+  animation: card-movie-loading 3s linear infinite;
+  background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
+  min-height: 218px;
+}
+
+.movie-byid-page .card-movie-loading div {
+  animation: movie-page-card-loading 3s linear infinite;
+  min-height: 400px;
+}
+
+@keyframes card-movie-loading {
+  from {
+    background-position-y: -218px;
+  }
+  to {
+    background-position-y: 218px;
+  }
+}
+
+@keyframes movie-page-card-loading {
+  from {
+    background-position-y: -400px;
+  }
+  to {
+    background-position-y: 400px;
+  }
+}
+
