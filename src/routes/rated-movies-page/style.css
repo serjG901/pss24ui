@@ -41,6 +41,10 @@
     margin-bottom: var(--margin-mmxl);
 }
 
+.rated-movies:has(.empty-search) .rated-movies-header {
+    display: none;
+}
+
 @media screen and (max-width: 360px) {
     .rated-movies-header {
         padding-inline: var(--padding-inline-s);
