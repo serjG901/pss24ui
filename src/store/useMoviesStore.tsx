@@ -310,7 +310,9 @@ const useMoviesStore = create<MoviesState>()(
 
             keyword: "",
             setKeyword: (keyword) => {
+                console.log(keyword==="");
                 set({ keyword });
+                if (keyword==="") get().getRatedMovies();
                 get().setFilterIsEmpty();
             },
             resetKeyword: () => set({ keyword: "" }),
@@ -441,7 +443,7 @@ const useMoviesStore = create<MoviesState>()(
                 set({ errorRatedMovies: null });
                 set({ ratedMovies: [] });
                 const keyword = get().keyword;
-                const ids = !keyword
+                const ids = keyword === ""
                     ? Object.keys(get().ratedMoviesIds).map((item) => +item)
                     : Object.keys(get().ratedMoviesIds)
                           .map((item) => +item)
