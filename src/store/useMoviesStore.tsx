@@ -450,7 +450,7 @@ const useMoviesStore = create<MoviesState>()(
                           .filter((id: number) =>
                               get()
                                   .ratedMoviesIds[id].name.toLowerCase()
-                                  .includes(keyword)
+                                  .includes(keyword.toLowerCase())
                           );
                 if (!ids.length) {
                     set({
