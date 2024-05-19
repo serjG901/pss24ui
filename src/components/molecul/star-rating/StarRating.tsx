@@ -23,14 +23,17 @@ export default function StarRating({
     };
 
     return (
-        <div
-            className={`star-rating ${isRated ? "is-rated" : ""}`}
-            title={altRating}
-        >
-            <MyButton action={actionWithPrevent} dataElem={dataElem}>
+        <div className={`star-rating ${isRated ? "is-rated" : ""}`}>
+            <MyButton
+                action={actionWithPrevent}
+                dataElem={dataElem}
+                title={altRating}
+            >
                 <StarSvg filled={isRated} />
             </MyButton>
-            {userRating && <div className='star-rating-user-rating'>{userRating}</div>}
+            {Number.isInteger(userRating) && (
+                <div className='star-rating-user-rating'>{userRating}</div>
+            )}
         </div>
     );
 }
