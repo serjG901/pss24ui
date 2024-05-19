@@ -10,5 +10,5 @@ export default defineConfig({
   esbuild: {
     drop: ['console', 'debugger'],
   },
-  base: "/",
+  base: "/pss24ui",
 });
