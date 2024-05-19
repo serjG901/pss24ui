@@ -17,7 +17,6 @@ export default function RatedMoviesPage() {
         error,
         getRatedMovies,
         itemsPerPage,
-        keyword,
         ratedMoviesIds,
     ] = useMoviesStore((state) => [
         state.ratedMovies,
@@ -25,7 +24,6 @@ export default function RatedMoviesPage() {
         state.errorRatedMovies,
         state.getRatedMovies,
         state.itemsPerPageRatedMovies,
-        state.keyword,
         state.ratedMoviesIds,
     ]);
 
@@ -56,7 +54,7 @@ export default function RatedMoviesPage() {
                                     <CardMovieData movie={movie} />
                                 </Link>
                             ))
-                        ) : keyword || Object.values(ratedMoviesIds).length ? (
+                        ) : Object.values(ratedMoviesIds).length ? (
                             <EmptyFoundData />
                         ) : (
                             <EmptyRatedMoviesData />
