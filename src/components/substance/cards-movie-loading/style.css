@@ -11,7 +11,7 @@
     margin-top: var(--margin-xxxl);
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 750px) {
     .cards-movie-loading {
         display: flex;
         flex-direction: column;
