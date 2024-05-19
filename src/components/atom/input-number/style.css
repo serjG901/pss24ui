@@ -1,52 +1,52 @@
 .input-number {
-  position: relative;
-  width: 100%;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
-  border: var(--my-select-default--border);
-  -webkit-appearance: none;
-  appearance: none;
+    position: relative;
+    width: 100%;
+    height: var(--height-xxl);
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius-m);
+    border: var(--my-select-default--border);
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .input-number input {
-  font: var(--font--subtitle-s);
-  width: 100%;
-  height: 100%;
-  padding-inline: var(--padding-inline-m);
-  padding-block: var(--padding-block-s);
-  border-radius: 8px;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  appearance: none;
+    font: var(--font--subtitle-s);
+    width: 100%;
+    height: 100%;
+    padding-inline: var(--padding-inline-m);
+    padding-block: var(--padding-block-s);
+    border-radius: var(--border-radius-m);
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .input-number input::placeholder {
-  color: #acadb9;
+    color: var(--color-gray-500);
 }
 
 .input-number-arrows {
-  position: absolute;
-  top: 6px;
-  right: 3px;
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  background-color: var(--color-white);
+    position: absolute;
+    top: 6px;
+    right: 3px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xxxxs);
+    background-color: var(--color-white);
 }
 
 .input-number:hover {
-  border: var(--my-select-hover--border);
-  caret-color: black;
+    border: var(--my-select-hover--border);
+    caret-color: var(--color-original-black);
 }
 
 .input-number:has(input:focus) {
-  border: var(--my-select-focus--border);
+    border: var(--my-select-focus--border);
 }
 
 .input-number:has(input:not([value=""])):not(:focus):not(:hover) {
-  border: var(--my-select-filled--border);
+    border: var(--my-select-filled--border);
 }

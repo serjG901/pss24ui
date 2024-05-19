@@ -11,24 +11,3 @@
   color: var(--color-black);
   word-break: break-word;
 }
-/*
-.empty-found-button button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  background: var(--color-purple-500-main);
-  border-radius: var(--border-radius-m);
-  font: var(--font--text-link-button);
-  color: var(--color-white);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.empty-found-button a {
-  text-decoration: none;
-}
-
-.empty-found-button button:hover {
-  background: var(--color-purple-600);
-}*/

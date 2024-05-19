@@ -1,12 +1,12 @@
 .error-search {
-  margin-top: 80px;
-  margin-bottom: 44px;
-  word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-m);
 }
 
 .error-search-text {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  color: #9e3029;
+    font: var(--font--title-s-semibold);
+    color: var(--color-error);
 }

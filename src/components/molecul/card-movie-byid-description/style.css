@@ -5,57 +5,54 @@
     -webkit-hyphens: auto;
     hyphens: auto;
     text-align: left;
+    width: 100%;
+}
+
+.card-movie-byid-description-poster {
+    align-self: center;
 }
 
 .card-movie-byid-description-poster img {
     display: block;
-    width: 250px;
-    height: 352px;
+    width: var(--poster-byid-width);
+    height: var(--poster-byid-height);
 }
 
 .card-movie-byid-loading-poster {
-    animation: card-movie-loading-poster 3s linear infinite;
-    background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
-    min-height: 352px;
+    animation: card-movie-loading-poster var(--loading-behavior);
+    background: var(--loading-gradient);
+    min-height: var(--poster-byid-height);
 }
 
 @keyframes card-movie-loading-poster {
     from {
-        background-position-y: -352px;
+        background-position-y: calc(-1 * var(--poster-byid-height));
     }
     to {
-        background-position-y: 352px;
+        background-position-y: var(--poster-byid-height);
     }
 }
 
 @media screen and (max-width: 660px) {
     .card-movie-byid-description {
         flex-direction: column;
-        align-items: center;
     }
 
     .card-movie-byid-description-poster img {
-        width: 170px;
-        height: 239px;
+        width: var(--poster-byid-width-660);
+        height: var(--poster-byid-height-660);
     }
 
     .card-movie-byid-loading-poster {
-        animation: card-movie-loading-poster 3s linear infinite;
-        background: linear-gradient(
-            0deg,
-            #ffffff 0%,
-            #eeeeee 50%,
-            #ffffff 100%
-        );
-        min-height: 239px;
+        min-height: var(--poster-byid-height-660);
     }
 
     @keyframes card-movie-loading-poster {
         from {
-            background-position-y: -239px;
+            background-position-y: calc(-1 * var(--poster-byid-height-660));
         }
         to {
-            background-position-y: 239px;
+            background-position-y: var(--poster-byid-height-660);
         }
     }
 }
@@ -95,11 +92,11 @@
     flex-grow: 1;
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 12px;
+    gap: var(--gap-s);
     align-content: flex-end;
 }
 
 .card-movie-byid-description-genres-etc div:nth-child(even) {
     color: var(--color-black);
-    padding-left: 10px;
+    padding-left: var(--padding-sm);
 }

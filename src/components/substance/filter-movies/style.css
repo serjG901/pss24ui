@@ -21,7 +21,7 @@
 }
 @media screen and (max-width: 380px) {
     .filter-movies {
-        padding: 8px;
+        padding: var(--padding-s);
     }
 }
 
@@ -33,15 +33,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap-m);
-    margin-top: 50px;
-    margin-bottom: 26px;
+    margin-top: var(--margin-xxxxl);
+    margin-bottom: var(--margin-xl);
 }
 
 .filter-movies-genres,
 .filter-movies-release,
 .filter-movies-sortby,
 .filter-movies-ratings {
-    width: 284px;
+    width: var(--form-element-width);
 }
 
 .filter-movies-sortby {
@@ -50,10 +50,10 @@
 
 @media screen and (max-width: 640px) {
     .filter-movies-sortby {
-        margin-top: -8px;
+        margin-top: calc(-1 * var(--margin-s));
     }
     .filter-movies:has(.filter-movies-form_hide) .filter-movies-sortby {
-        margin-top: -24px;
+        margin-top: calc(-1 * var(--margin-mxl));
     }
 }
 

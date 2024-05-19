@@ -1,14 +1,13 @@
 .navbar {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--gap-m);
 }
 @media screen and (max-width: 1000px) {
     .navbar {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-self: center;
-        gap: 16px;
     }
     .navbar .my-link {
         width: max-content;

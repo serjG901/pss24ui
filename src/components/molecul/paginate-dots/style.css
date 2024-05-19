@@ -1,8 +1,8 @@
 .paginate-dots {
   box-sizing: border-box;
-  padding: 0px 8px;
-  width: 32px;
-  height: 32px;
+  padding: var(--padding-zero) var(--padding-s);
+  width: var(--width-l);
+  height: var(--height-l);
   display: flex;
   place-content: center;
   -webkit-user-select: none;

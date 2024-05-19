@@ -1,3 +1,4 @@
 .search-icon {
   display: inherit;
+  stroke: var(--color-gray-500);
 }

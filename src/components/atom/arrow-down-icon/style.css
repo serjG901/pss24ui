@@ -1,29 +1,29 @@
 .arrow-down-icon {
-  width: 28px;
-  height: 12px;
-  background-color: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
+    width: var(--width-ml);
+    height: var(--height-xxs);
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }
 
 .arrow-down-icon svg {
-  stroke: var(--color-gray-500);
+    stroke: var(--color-gray-500);
 }
 
 .arrow-down-icon:hover svg {
-  stroke: var(--color-purple-400);
+    stroke: var(--color-purple-400);
 }
 
 .my-button:has(.arrow-down-icon):focus svg {
-  stroke: var(--color-purple-400);
+    stroke: var(--color-purple-400);
 }
 
 .my-button:has(.arrow-down-icon) {
-  filter: none;
+    filter: none;
 }
 
 .arrow-down-icon:active svg {
-  stroke: var(--color-purple-500-main);
+    stroke: var(--color-purple-500-main);
 }

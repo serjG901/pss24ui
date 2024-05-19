@@ -8,7 +8,6 @@ export default function SearchIcon() {
         height="16"
         viewBox="0 0 16 16"
         fill="none"
-        stroke="#ACADB9"
         strokeWidth="1.5"
         strokeLinecap="round"
       >

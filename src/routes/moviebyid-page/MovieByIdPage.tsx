@@ -9,6 +9,7 @@ import CardMovieByIdBodyData from "../../components/thing/card-moviebyid-body-da
 import ErrorSearchData from "../../components/thing/error-search-data";
 
 export default function MovieByIdPage() {
+    window.scrollTo(0, 0);
     const { id } = useParams<"id">();
     const [movieByIdPage, loading, error, getMoviePageById] = useMoviesStore(
         (state) => [

@@ -85,7 +85,7 @@ const textes: ITextes = {
         },
         searchmovies: {
             placeholder: "Search movie title",
-            textButton: "search",
+            textButton: "Search",
         },
         emptysearch: {
             explain: "We don't have such movies, look for another one",

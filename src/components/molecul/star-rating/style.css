@@ -3,7 +3,7 @@
     height: min-content;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: var(--gap-xxxs);
 }
 
 .star-rating-user-rating {

@@ -20,8 +20,8 @@
 
 .card-movie-description-poster img {
     display: block;
-    width: 119px;
-    height: 170px;
+    width: var(--poster-card-width);
+    height: var(--poster-card-height);
 }
 
 .card-movie-description-body {
@@ -66,16 +66,16 @@
 }
 
 .card-movie-loading-poster {
-    animation: card-movie-loading-poster 3s linear infinite;
-    background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
-    min-height: 170px;
+    animation: card-movie-loading-poster var(--loading-behavior);
+    background: var(--loading-gradient);
+    min-height: var(--poster-card-height);
 }
 
 @keyframes card-movie-loading-poster {
     from {
-        background-position-y: -170px;
+        background-position-y: calc(-1 * var(--poster-card-height));
     }
     to {
-        background-position-y: 170px;
+        background-position-y: var(--poster-card-height);
     }
 }

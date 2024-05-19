@@ -1,20 +1,16 @@
 .reset-filter {
-    height: 40px;
+    height: var(--height-xl);
     display: flex;
     align-items: center;
     align-self: flex-end;
 }
 
 .reset-filter button {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 20px;
+    font: var(--font--subtitle-s);
     color: var(--color-gray-600);
     stroke: var(--color-gray-600);
     display: flex;
-    gap: 4px;
+    gap: var(--gap-xxxs);
     cursor: inherit;
 }
 
@@ -23,12 +19,12 @@
     stroke: var(--color-purple-500-main);
 }
 
-.reset-filter-show button:hover{
+.reset-filter-show button:hover {
     color: var(--color-purple-400);
     stroke: var(--color-purple-400);
 }
 
-.reset-filter-show button:active{
+.reset-filter-show button:active {
     color: var(--color-purple-600);
     stroke: var(--color-purple-600);
 }

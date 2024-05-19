@@ -7,9 +7,7 @@
 .popover-wrapper::backdrop {
     background-color: rgba(0 0 0/0.5);
 }
-.user-rating:focus {
-    outline: 1px solid var(--color-purple-500-main);
-}
+
 .user-rating {
     position: fixed;
     height: max-content;
@@ -18,10 +16,10 @@
     background-color: var(--color-white);
     margin: auto;
     width: 100%;
-    max-width: 380px;
+    max-width: var(--user-rating-modal-width);
     border: none;
-    border-radius: 8px;
-    padding: 16px;
+    border-radius: var(--border-radius-m);
+    padding: var(--padding-ml);
     text-align: left;
     font: var(--font--text-base-m-regular);
 }
@@ -29,15 +27,20 @@
 .user-rating-body {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--gap-m);
 }
 
 .user-rating-header {
-    padding-top: 2px;
-    padding-bottom: 16px;
+    padding-top: var(--padding-xxs);
+    padding-bottom: var(--padding-ml);
     align-content: center;
     border-bottom: 1px solid var(--color-gray-500);
     position: relative;
+    font: var(--font--text-base-m-regular);
+}
+
+.user-rating-header > button {
+    font: inherit;
 }
 
 .user-rating-header-close {
@@ -49,10 +52,6 @@
 
 .user-rating-header-close:hover {
     stroke: var(--color-purple-400);
-}
-
-.user-rating-header-close button:focus {
-    outline: 1px solid var(--color-purple-500-main);
 }
 
 .user-rating-header-close button:active {
@@ -73,13 +72,11 @@
 }
 
 .user-rating-buttons button {
-    padding: 4px 20px;
-    height: 40px;
+    padding: var(--padding-block-xs) var(--padding-inline-l);
+    height: var(--height-xl);
     background-color: var(--color-purple-500-main);
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
+    border-radius: var(--border-radius-m);
+    font: var(--font--text-base-s-semi);
     color: var(--color-white);
     cursor: pointer;
 }
@@ -95,10 +92,6 @@
 .user-rating-buttons button:last-child:hover {
     color: var(--color-purple-400);
     background-color: var(--color-white);
-}
-
-.user-rating-buttons button:focus {
-    outline: 1px solid var(--color-purple-500-main);
 }
 
 .user-rating-buttons button:active {

@@ -1,18 +1,18 @@
 .form-ratings {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 284px;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: var(--form-element-width);
+    gap: var(--gap-xxs);
 }
 
 .form-ratings-inputs {
-  display: flex;
-  gap: 8px;
-  width: 100%;
+    display: flex;
+    gap: var(--gap-xxs);
+    width: 100%;
 }
 
 .form-ratings-label {
-  font: var(--font--text-base-m-bold);
-  color: var(--color-black);
+    font: var(--font--text-base-m-bold);
+    color: var(--color-black);
 }

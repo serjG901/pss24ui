@@ -1,52 +1,42 @@
 .paginate-page-button {
-  display: contents;
+    display: contents;
 }
 
 .paginate-page-button button {
-  font: var(--font--text-paginate);
-  box-sizing: border-box;
-  padding: 0px 7px;
-  min-width: 32px;
-  width: min-content;
-  height: 32px;
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-300);
-  border-radius: var(--border-radius-s);
-  display: flex;
-  place-content: center;
-  cursor: pointer;
-  color: var(--color-black);
+    font: var(--font--text-paginate);
+    box-sizing: border-box;
+    padding: var(--padding-zero) var(--padding-s);
+    min-width: var(--width-l);
+    width: min-content;
+    height: var(--height-l);
+    background: var(--color-white);
+    border-radius: var(--border-radius-s);
+    display: flex;
+    place-content: center;
+    cursor: pointer;
+    color: var(--color-black);
 }
 
 .paginate-page-button button:hover {
-  border: 1px solid var(--color-purple-500-main);
-}
-
-.paginate-page-button button:focus {
-  border: 1px solid var(--color-purple-500-main);
+    outline: var(--outline-default);
 }
 
 .paginate-page-button_active button {
-  background: var(--color-purple-500-main);
-  border: 1px solid var(--color-purple-500-main);
-  color: var(--color-white);
+    background: var(--color-purple-500-main);
+    color: var(--color-white);
 }
 
 .paginate-page-button_active button {
-  cursor: auto;
+    cursor: auto;
 }
 
 .paginate-page-button_disabled button,
 .paginate-page-button_disabled button:hover {
-  border: 1px solid var(--color-gray-200);
-  color: var(--color-gray-200);
-  cursor: auto;
+    color: var(--color-gray-200);
+    cursor: auto;
+    outline: none;
 }
 
 .paginate-page-button_disabled svg {
-  fill: var(--color-gray-200);
-}
-
-.paginate-page-button_active button:hover {
-  border: 1px solid var(--color-purple-500-main);
+    fill: var(--color-gray-200);
 }

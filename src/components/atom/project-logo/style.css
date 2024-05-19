@@ -4,6 +4,6 @@
 }
 
 .project-logo img {
-  max-width: 32px;
-  max-height: 32px;
+  max-width: var(--width-l);
+  max-height: var(--height-l);
 }

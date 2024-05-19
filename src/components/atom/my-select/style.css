@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: var(--gap-xxs);
     position: relative;
 }
 
@@ -13,12 +13,12 @@
 .my-select-select {
     font: var(--font--subtitle-s);
     align-items: center;
-    height: 42px;
+    height: var(--height-xxl);
     padding-inline: var(--padding-inline-m);
     padding-block: var(--padding-block-s);
-    padding-right: 20px;
+    padding-right: var(--padding-l);
     border: var(--my-select-default--border);
-    border-radius: 8px;
+    border-radius: var(--border-radius-m);
     width: 100%;
     cursor: pointer;
     background-color: var(--color-white);
@@ -28,12 +28,12 @@
 }
 
 .my-select-select-option {
-    height: 36px;
+    height: var(--height-l);
     font: var(--font--text-base-m-regular);
 }
 
 .my-select-select-empty {
-    color: #acadb9;
+    color: var(--color-gray-500);
 }
 
 .my-select-select-empty:focus {
@@ -62,7 +62,7 @@
     right: 1px;
     top: 36px;
     background-color: transparent;
-    padding-right: 10px;
+    padding-right: var(--padding-sm);
     pointer-events: none;
     mix-blend-mode: multiply;
 }
@@ -73,21 +73,21 @@
 
 .my-select-select-error {
     cursor: auto;
-    color: #9e3029;
+    color: var(--color-error);
     border: var(--my-select-default--border) !important;
 }
 
 .my-select-select-loading {
     cursor: wait;
-    animation: loading-select 3s linear infinite;
-    background: linear-gradient(0deg, #ffffff 0%, #eeeeee 50%, #ffffff 100%);
+    animation: loading-select var(--loading-behavior);
+    background: var(--loading-gradient);
 }
 
 @keyframes loading-select {
     from {
-        background-position-y: -19px;
+        background-position-y: calc(-1 * var(--height-xxl));
     }
     to {
-        background-position-y: 19px;
+        background-position-y: var(--height-xxl);
     }
 }

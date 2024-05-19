@@ -18,6 +18,7 @@ export default function CardMovieData({ movie }: ICardMovieData) {
             state.setMovieForRating,
             state.setUserRatingStars,
         ]);
+    if (!movie) return null;
     const isRated = !!ratedMoviesIds[movie.id];
     const genreNames = movie.genre_ids.map(
         (id: number) =>

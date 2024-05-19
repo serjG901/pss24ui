@@ -1,19 +1,16 @@
 .project-logo-name {
     display: flex;
-    height: 36px;
+    height: var(--height-lxl);
     align-items: center;
-    gap: 12px;
+    gap: var(--gap-s);
     color: var(--color-purple-500-main);
 }
 
 @media screen and (max-width: 1100px) {
     .project-logo-name {
-        display: flex;
-        height: 72px;
+        height: var(--height-xxxxxl);
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        gap: 12px;
         color: var(--color-purple-500-main);
     }
 }

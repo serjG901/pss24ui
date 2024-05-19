@@ -30,14 +30,25 @@ export default function InputNumber({
         isFirstContact.current = false;
         let val = event.target.value;
         if (/\d{1,2}/.test(val)) {
-            val = +val > 10 ? "10" : +val < 0 ? "0" : val;
+            val =
+                +val > max
+                    ? +val[val.length - 1] === 1
+                        ? "10"
+                        : +val[val.length - 1] < min
+                        ? min + ""
+                        : +val[val.length - 1] > max
+                        ? max + ""
+                        : val[val.length - 1]
+                    : +val < min
+                    ? min + ""
+                    : val;
             setValue(+val);
         }
     };
 
     const handlePlus = () => {
         isFirstContact.current = false;
-        setValue(value >= max ? value  : value  + step);
+        setValue(value >= max ? value : value + step);
     };
 
     const handleMinus = () => {
@@ -50,7 +61,13 @@ export default function InputNumber({
             <input
                 type='number'
                 placeholder={placeholder}
-                value={isFirstContact.current ? "" : value}
+                value={
+                    value > min && value < max
+                        ? value
+                        : isFirstContact.current
+                        ? ""
+                        : value
+                }
                 onChange={handleChange}
                 step={step}
                 max={max}

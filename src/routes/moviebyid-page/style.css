@@ -1,26 +1,26 @@
 .movie-byid-page {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--gap-l);
     align-items: center;
     width: 100%;
-    max-width: 800px;
-    margin-top: -6px;
-    margin-bottom: 44px;
+    max-width: var(--movie-byid-page-width);
+    margin-top: calc(-1 * var(--margin-sxs));
+    margin-bottom: var(--margin-hxxxl);
 }
 
 .movie-byid-page-card {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--gap-l);
 }
 
 .movie-byid-page-card-path {
     color: var(--color-black);
     display: flex;
     align-self: flex-start;
-    gap: 11px;
+    gap: var(--gap-ms);
     font: var(--font--subtitle-s);
 }
 

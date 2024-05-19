@@ -1,13 +1,13 @@
 .rating-icon-noAction {
-    width: 28px;
-    height: 28px;
+    width: var(--width-ml);
+    height: var(--height-ml);
     stroke: var(--color-yellow);
     fill: var(--color-yellow);
 }
 
 .rating-icon {
-    width: 28px;
-    height: 28px;
+    width: var(--width-ml);
+    height: var(--height-ml);
 }
 
 .rating-icon {

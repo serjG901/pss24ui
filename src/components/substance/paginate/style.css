@@ -1,7 +1,7 @@
 .paginate {
     display: flex;
     gap: var(--gap-xxs);
-    margin-bottom: 4px;
+    margin-bottom: var(--margin-xs);
     grid-area: paginate;
     width: 100%;
     justify-content: flex-end;

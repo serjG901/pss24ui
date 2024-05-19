@@ -1,9 +1,9 @@
 .card-movie-byid-body {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 24px;
+    gap: var(--gap-l);
     align-items: flex-start;
+    width: 100%;
 }
 
 .card-movie-byid-body > div > div:nth-child(odd) {
@@ -14,7 +14,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--gap-m);
     align-items: flex-start;
 }
 .card-movie-byid-body-trailer-iframe {
@@ -22,12 +22,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: var(--padding-s);
     background-color: var(--color-gray-100);
-    border-radius: 9px;
+    border-radius: var(--border-radius-iframe);
 }
 .card-movie-byid-body-trailer-iframe iframe {
-    border-radius: 9px;
+    border-radius: var(--border-radius-iframe);
     border: none;
     width: 100%;
     aspect-ratio: 16/9;
@@ -36,10 +36,10 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--gap-m);
     align-items: flex-start;
     text-align: left;
-    padding-block: 20px;
+    padding-block: var(--padding-block-l);
     border-block: 1px solid var(--color-gray-500);
 }
 
@@ -47,30 +47,30 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--gap-m);
     align-items: flex-start;
 }
 
 .card-movie-byid-body-production-body {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--gap-s);
 }
 
 .card-movie-byid-body-production-body-company {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--gap-xxs);
     font: var(--font--text-base-m-bold);
 }
 
 .card-movie-byid-body-production-body-company-logo {
-    width: 40px;
-    height: 40px;
+    width: var(--width-xl);
+    height: var(--height-xl);
     align-items: center;
     justify-content: center;
     display: flex;
-    padding: 6px;
+    padding: var(--padding-sxs);
     border: 1px solid var(--color-gray-100);
     border-radius: 50%;
 }
@@ -78,7 +78,7 @@
 .card-movie-byid-body-production-body-company-logo img {
     display: block;
     object-fit: contain;
-    width: 27px;
+    width: var(--width-logo-product-company);
 }
 
 .card-movie-byid-body-production-body-company-name {

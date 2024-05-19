@@ -1,6 +1,8 @@
+import "./style.css";
+
 export default function EmprtySearchSvg() {
     return (
-        <div>
+        <div className='emprty-search-svg'>
             <svg
                 width='312'
                 height='253'
@@ -10,7 +12,6 @@ export default function EmprtySearchSvg() {
             >
                 <mask
                     id='mask0_18006_3363'
-                    style={{ maskType: "alpha" }}
                     maskUnits='userSpaceOnUse'
                     x='0'
                     y='0'
@@ -52,7 +53,6 @@ export default function EmprtySearchSvg() {
                     />
                     <mask
                         id='mask1_18006_3363'
-                        style={{ maskType: "alpha" }}
                         maskUnits='userSpaceOnUse'
                         x='60'
                         y='32'
@@ -86,7 +86,6 @@ export default function EmprtySearchSvg() {
                         />
                         <mask
                             id='mask2_18006_3363'
-                            style={{ maskType: "alpha" }}
                             maskUnits='userSpaceOnUse'
                             x='119'
                             y='101'
