@@ -8,16 +8,26 @@ import ErrorSearchData from "../../components/thing/error-search-data";
 import CardMovieData from "../../components/thing/card-movie-data";
 import PaginateRatedMoviesData from "../../components/thing/paginate-rated-movies-data";
 import SearchMoviesData from "../../components/thing/search-movies-data";
+import EmptyFoundData from "../../components/thing/empty-found-data";
 
 export default function RatedMoviesPage() {
-    const [movies, loading, error, getRatedMovies, itemsPerPage] =
-        useMoviesStore((state) => [
-            state.ratedMovies,
-            state.loadingRatedMovies,
-            state.errorRatedMovies,
-            state.getRatedMovies,
-            state.itemsPerPageRatedMovies,
-        ]);
+    const [
+        movies,
+        loading,
+        error,
+        getRatedMovies,
+        itemsPerPage,
+        keyword,
+        ratedMoviesIds,
+    ] = useMoviesStore((state) => [
+        state.ratedMovies,
+        state.loadingRatedMovies,
+        state.errorRatedMovies,
+        state.getRatedMovies,
+        state.itemsPerPageRatedMovies,
+        state.keyword,
+        state.ratedMoviesIds,
+    ]);
 
     useEffect(() => {
         getRatedMovies();
@@ -46,6 +56,8 @@ export default function RatedMoviesPage() {
                                     <CardMovieData movie={movie} />
                                 </Link>
                             ))
+                        ) : keyword || Object.values(ratedMoviesIds).length ? (
+                            <EmptyFoundData />
                         ) : (
                             <EmptyRatedMoviesData />
                         )}
