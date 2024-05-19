@@ -231,6 +231,8 @@ interface MoviesState {
     getMovieByIdPage: (id: number | string) => void;
 }
 
+let controller = new AbortController();
+
 const useMoviesStore = create<MoviesState>()(
     persist(
         (set, get) => ({
@@ -238,6 +240,8 @@ const useMoviesStore = create<MoviesState>()(
             loadingMovies: true,
             errorMovies: null,
             getMovies: async () => {
+                controller.abort();
+                controller = new AbortController();
                 set({ loadingMovies: true });
                 set({ errorMovies: null });
                 set({ movies: [] });
@@ -259,16 +263,24 @@ const useMoviesStore = create<MoviesState>()(
                         voteAverageGte,
                         sortBy,
                         page,
+                        controller,
                     })) as IMovies;
+                    //@ts-expect-error check error
+                    if (res?.message) throw res;
                     set({
                         movies: [...res.results],
                         totalMovies:
                             res.total_results > 500 ? 500 : res.total_results,
                     });
+                    set({ loadingMovies: false });
                 } catch (error) {
-                    set({ errorMovies: error });
+                    console.dir(error);
+                    //@ts-expect-error check error
+                    if (error.name !== "AbortError") {
+                        set({ errorMovies: error });
+                        set({ loadingMovies: false });
+                    }
                 }
-                set({ loadingMovies: false });
             },
 
             totalMovies: 0,
@@ -369,7 +381,6 @@ const useMoviesStore = create<MoviesState>()(
                 if (get().errorGenres) return;
                 if (get().filterIsEmpty && get().movies.length) return;
                 set({ pageActive: 1 });
-                //get().getMovies();
             },
             resetFilter: () => {
                 set({
@@ -424,6 +435,8 @@ const useMoviesStore = create<MoviesState>()(
             loadingRatedMovies: true,
             errorRatedMovies: null,
             getRatedMovies: async () => {
+                controller.abort();
+                controller = new AbortController();
                 set({ loadingRatedMovies: true });
                 set({ errorRatedMovies: null });
                 set({ ratedMovies: [] });
@@ -438,7 +451,12 @@ const useMoviesStore = create<MoviesState>()(
                                   .includes(keyword)
                           );
                 if (!ids.length) {
-                    set({ loadingRatedMovies: false });
+                    set({
+                        loadingRatedMovies: false,
+                        ratedMovies: [],
+                        totalRatedMovies: 0,
+                        pageActiveRatedMovies: 1,
+                    });
                     return;
                 }
                 const count = get().itemsPerPageRatedMovies;
@@ -449,19 +467,28 @@ const useMoviesStore = create<MoviesState>()(
                 try {
                     const res = (await fetchRatedMovies({
                         idsForFetch,
+                        controller,
                     })) as IRatedMovies;
                     console.log("res.movies");
-                    console.dir(res.movies);
+                    console.dir(Array.isArray(res.movies));
+                    //@ts-expect-error check error
+                    const error = res.movies.find((r: unknown) => !!r.message);
+                    console.dir(error);
+                    if (error) throw error;
                     set({
                         ratedMovies: [...res.movies],
-                        totalRatedMovies:
-                            ids.length > 500 ? 500 : ids.length,
+                        totalRatedMovies: ids.length > 500 ? 500 : ids.length,
                         pageActiveRatedMovies: page,
                     });
+                    set({ loadingRatedMovies: false });
                 } catch (error) {
-                    set({ errorRatedMovies: error });
+                    console.dir(error);
+                    //@ts-expect-error check error
+                    if (error.name !== "AbortError") {
+                        set({ errorRatedMovies: error });
+                        set({ loadingRatedMovies: false });
+                    }
                 }
-                set({ loadingRatedMovies: false });
             },
 
             pageActiveRatedMovies: 1,
@@ -475,8 +502,7 @@ const useMoviesStore = create<MoviesState>()(
                 const page = get().pageActiveRatedMovies;
                 if (page > 0) {
                     set({
-                        pageActiveRatedMovies:
-                            get().pageActiveRatedMovies - 1,
+                        pageActiveRatedMovies: get().pageActiveRatedMovies - 1,
                     });
                     get().getRatedMovies();
                 }
@@ -486,8 +512,7 @@ const useMoviesStore = create<MoviesState>()(
                 const total = get().totalRatedMovies;
                 if (page < total) {
                     set({
-                        pageActiveRatedMovies:
-                            get().pageActiveRatedMovies + 1,
+                        pageActiveRatedMovies: get().pageActiveRatedMovies + 1,
                     });
                     get().getRatedMovies();
                 }
@@ -499,20 +524,30 @@ const useMoviesStore = create<MoviesState>()(
             errorMovieByIdPage: null,
             getMovieByIdPage: async (id) => {
                 if (!id) throw new Error(`Can't find movie by id=${id}`);
+                controller.abort();
+                controller = new AbortController();
                 set({ loadingMovieByIdPage: true });
                 set({ movieByIdPage: null });
                 set({ errorMovieByIdPage: null });
                 try {
-                    const res = (await fetchMovieById({ id })) as IMovieById;
-                    if (!res.id) {
-                        set({ movieByIdPage: null });
-                    } else {
+                    const res = (await fetchMovieById({
+                        id,
+                        controller,
+                    })) as IMovieById;
+                    //@ts-expect-error check error
+                    if (res?.message) throw res;
+                    if (res?.id) {
                         set({ movieByIdPage: res });
+                        set({ loadingMovieByIdPage: false });
                     }
                 } catch (error) {
-                    set({ errorMovieByIdPage: error });
+                    console.dir(error);
+                    //@ts-expect-error check error
+                    if (error.name !== "AbortError") {
+                        set({ errorMovieByIdPage: error });
+                        set({ loadingMovieByIdPage: false });
+                    }
                 }
-                set({ loadingMovieByIdPage: false });
             },
         }),
         {
