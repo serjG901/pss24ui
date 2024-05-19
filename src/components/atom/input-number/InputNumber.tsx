@@ -32,7 +32,7 @@ export default function InputNumber({
         if (/\d{1,2}/.test(val)) {
             val =
                 +val > max
-                    ? +val[val.length - 1] === 1
+                    ? +val[val.length - 1] === 1 && max === 10
                         ? "10"
                         : +val[val.length - 1] < min
                         ? min + ""
