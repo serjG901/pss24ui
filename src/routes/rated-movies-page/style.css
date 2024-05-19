@@ -33,10 +33,6 @@
     justify-content: center;
 }
 
-.rated-movies:has(.empty-search) .rated-movies-header {
-    display: none;
-}
-
 .rated-movies-header {
     display: flex;
     grid-template-columns: 1fr 1fr;
