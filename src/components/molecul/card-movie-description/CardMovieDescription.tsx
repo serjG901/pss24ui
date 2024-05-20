@@ -62,11 +62,16 @@ export default function CardMovieDescription({
                 </div>
                 <div className='card-movie-description-genres'>
                     <div>
-                        {!genres[0] ? (
+                        {!genres ? (
                             <LoadingDots>Genres</LoadingDots>
                         ) : (
                             <>
-                                Genres <span>{genres.join(", ")}</span>
+                                Genres{" "}
+                                <span>
+                                    {genres.length
+                                        ? genres.join(", ")
+                                        : "No info"}
+                                </span>
                             </>
                         )}
                     </div>
