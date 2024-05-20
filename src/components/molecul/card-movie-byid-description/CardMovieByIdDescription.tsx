@@ -71,7 +71,12 @@ export default function CardMovieByIdDescription({
                 <div className='card-movie-byid-description-genres-etc'>
                     <div>Duration</div>
                     <div>{runtime ? durationToClock(runtime) : "No info"}</div>
-                    <div>Premiere</div> <div>{premierDate(releaseDate)}</div>
+                    <div>Premiere</div>
+                    <div>
+                        {/\d\d\d\d-\d\d-\d\d/.test(releaseDate)
+                            ? premierDate(releaseDate)
+                            : "No info"}
+                    </div>
                     <div>Budget</div>
                     <div>
                         {budget ? "$" + moneyWithComma(budget) : "No info"}
@@ -80,7 +85,8 @@ export default function CardMovieByIdDescription({
                     <div>
                         {revenue ? "$" + moneyWithComma(revenue) : "No info"}
                     </div>
-                    <div>Genres</div> <div>{genres.join(", ")}</div>
+                    <div>Genres</div>{" "}
+                    <div>{genres.length ? genres.join(", ") : "No info"}</div>
                 </div>
             </div>
         </div>
