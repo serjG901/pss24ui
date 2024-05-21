@@ -52,7 +52,7 @@ export default function CardMovieById({
                                   >
                                       <div className='card-movie-byid-body-production-body-company-logo'>
                                           <img
-                                              src={`${posterUrl}${company.logo_path}`}
+                                              src={company.logo_path ? `${posterUrl}${company.logo_path}` : altLogoCompanyUrl}
                                               alt=''
                                               onError={({
                                                   target,
