@@ -26,6 +26,11 @@
     color: var(--color-white);
 }
 
+.paginate-page-button_active button:hover {
+    outline: none;
+    cursor: inherit;
+}
+
 .paginate-page-button_active button {
     cursor: auto;
 }
