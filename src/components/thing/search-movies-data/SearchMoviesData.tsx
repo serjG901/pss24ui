@@ -3,8 +3,8 @@ import useMoviesStore from "../../../store/useMoviesStore";
 import SearchMovies from "../../substance/search-movies";
 
 export default function SearchMoviesData() {
-  const [applyFilter, keyword, setKeyword] = useMoviesStore((state) => [
-    state.getRatedMovies,
+  const [searchRatedMovies, keyword, setKeyword] = useMoviesStore((state) => [
+    state.searchRatedMovies,
     state.keyword,
     state.setKeyword,
   ]);
@@ -17,7 +17,7 @@ export default function SearchMoviesData() {
       setValue={setKeyword}
       placeholder={textes.placeholder}
       textSearchButton={textes.textButton}
-      action={applyFilter}
+      action={searchRatedMovies}
     />
   );
 }
