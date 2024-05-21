@@ -198,10 +198,6 @@ interface MoviesState {
     applyFilter: () => void;
     resetFilter: () => void;
 
-    keyword: string;
-    setKeyword: (keyword: string) => void;
-    resetKeyword: () => void;
-
     userRatingStars: number;
     setUserRatingStars: (userRatingStars: number) => void;
 
@@ -211,6 +207,10 @@ interface MoviesState {
     ratedMoviesIds: { [key: number]: { stars: number; name: string } };
     addRatedMovieId: (id: number, stars: number, name: string) => void;
     deleteRatedMovieId: (id: number) => void;
+
+    keyword: string;
+    setKeyword: (keyword: string) => void;
+    searchRatedMovies: () => void;
 
     ratedMovies: IMovie[];
     loadingRatedMovies: boolean;
@@ -267,6 +267,7 @@ const useMoviesStore = create<MoviesState>()(
                     })) as IMovies;
                     //@ts-expect-error check error
                     if (res?.message) throw res;
+                    console.log(res.results);
                     set({
                         movies: [...res.results],
                         totalMovies:
@@ -308,20 +309,12 @@ const useMoviesStore = create<MoviesState>()(
 
             language: "en-US",
 
-            keyword: "",
-            setKeyword: (keyword) => {
-                console.log(keyword==="");
-                set({ keyword });
-                if (keyword==="") get().getRatedMovies();
-                get().setFilterIsEmpty();
-            },
-            resetKeyword: () => set({ keyword: "" }),
-
             voteAverageLteDefault: 10,
             voteAverageLte: 10,
             setVoteAverageLte: (voteAverageLte) => {
                 set({ voteAverageLte: voteAverageLte });
                 get().setFilterIsEmpty();
+                set({ pageActive: 1 });
                 get().getMovies();
             },
 
@@ -330,6 +323,7 @@ const useMoviesStore = create<MoviesState>()(
             setVoteAverageGte: (voteAverageGte) => {
                 set({ voteAverageGte: voteAverageGte });
                 get().setFilterIsEmpty();
+                set({ pageActive: 1 });
                 get().getMovies();
             },
 
@@ -339,6 +333,7 @@ const useMoviesStore = create<MoviesState>()(
             setSortBy: (sortBy: number) => {
                 set({ sortBy: sortBy });
                 get().setFilterIsEmpty();
+                set({ pageActive: 1 });
                 get().getMovies();
             },
 
@@ -346,6 +341,7 @@ const useMoviesStore = create<MoviesState>()(
             setWithGenres: (genreId: number) => {
                 set({ withGenres: genreId });
                 get().setFilterIsEmpty();
+                set({ pageActive: 1 });
                 get().getMovies();
             },
 
@@ -354,6 +350,7 @@ const useMoviesStore = create<MoviesState>()(
             setPrimaryReleaseYear: (primaryReleaseYear: number) => {
                 set({ primaryReleaseYear });
                 get().setFilterIsEmpty();
+                set({ pageActive: 1 });
                 get().getMovies();
             },
 
@@ -433,6 +430,20 @@ const useMoviesStore = create<MoviesState>()(
                 });
             },
 
+            keyword: "",
+            setKeyword: (keyword) => {
+                set({ keyword });
+                if (keyword === "") {
+                    set({ pageActiveRatedMovies: 1 });
+                    get().getRatedMovies();
+                }
+                get().setFilterIsEmpty();
+            },
+            searchRatedMovies: () => {
+                set({ pageActiveRatedMovies: 1 });
+                get().getRatedMovies();
+            },
+
             ratedMovies: [],
             loadingRatedMovies: true,
             errorRatedMovies: null,
@@ -443,15 +454,27 @@ const useMoviesStore = create<MoviesState>()(
                 set({ errorRatedMovies: null });
                 set({ ratedMovies: [] });
                 const keyword = get().keyword;
-                const ids = keyword === ""
-                    ? Object.keys(get().ratedMoviesIds).map((item) => +item)
-                    : Object.keys(get().ratedMoviesIds)
-                          .map((item) => +item)
-                          .filter((id: number) =>
-                              get()
-                                  .ratedMoviesIds[id].name.toLowerCase()
-                                  .includes(keyword.toLowerCase())
-                          );
+                const ids =
+                    keyword === ""
+                        ? Object.keys(get().ratedMoviesIds)
+                              .map((item) => +item)
+                              .sort(
+                                  (a, b) =>
+                                      get().ratedMoviesIds[b].stars -
+                                      get().ratedMoviesIds[a].stars
+                              )
+                        : Object.keys(get().ratedMoviesIds)
+                              .map((item) => +item)
+                              .filter((id: number) =>
+                                  get()
+                                      .ratedMoviesIds[id].name.toLowerCase()
+                                      .includes(keyword.toLowerCase())
+                              )
+                              .sort(
+                                  (a, b) =>
+                                      get().ratedMoviesIds[b].stars -
+                                      get().ratedMoviesIds[a].stars
+                              );
                 if (!ids.length) {
                     set({
                         loadingRatedMovies: false,
@@ -536,6 +559,7 @@ const useMoviesStore = create<MoviesState>()(
                         id,
                         controller,
                     })) as IMovieById;
+                    console.log(res);
                     //@ts-expect-error check error
                     if (res?.message) throw res;
                     if (res?.id) {
